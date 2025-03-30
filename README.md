@@ -146,6 +146,9 @@ Original specification by Dennis Allison
 
 Original listing by Dick Whipple and John Arnold
 
+JavaScript 8080 emulator by Alexander Demin's
+[i8080-js](https://github.com/begoon/i8080-js)
+
 Transcribed from the original by Eric Scharff, March 2007
 
 JavaScript 8080 simulator added by Eric Scharff, March 2025
