@@ -3,9 +3,11 @@
 ## What is this?
 
 This is a listing of Tiny BASIC Extended, by Dick Whipple and John Arnold. The
-listing (as presented here) originally appeared in SIGPLAN Notices, July 1976.
-This is a reprint of an article that appeared in the January 1976 issue of Dr.
-Dobb's Journal of Tiny BASIC Calisthenics & Orthodontia.
+listing (as presented here) originally appeared in
+[SIGPLAN Notices, July 1976](https://doi.org/10.1145/987491.987494). The SIGPLAN
+article is a reprint of an article that appeared in the January 1976 issue of
+Dr. Dobb's Journal of Tiny BASIC Calisthenics & Orthodontia (the very first
+issue of Dr. Dobbs Journal.)
 
 The file [tinybasic.oct](tinybasic.oct) is a conversion of the original octal
 listing. This version of Tiny BASIC is written in 8080 machine code. This
