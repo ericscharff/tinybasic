@@ -46,12 +46,14 @@ registers should be modified.
 
 ### CRLF routine:
 
-Address 030 (10H) should output a CR followed by a LF. You can do whatever
+Address 020 (10H) should output a CR followed by a LF. You can do whatever
 newline processing you'd like instead. Only register A may be modified.
 
 In my Z80 simulator, I entered the cold start routine into memory, and
 implemented the other three routines as traps. I adopted a slightly different
-scheme for the JavaScript 8080 simulator included in this repository.
+scheme for the JavaScript 8080 simulator included in this repository. In that
+version, I used I/O so that input from port 0 fetches a character, output to
+port 0 outputs a character, and output to port 1 outputs a newline.
 
 ## Example Run
 
