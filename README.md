@@ -1,4 +1,4 @@
-# Tiny BASIC extended
+# Tiny BASIC Extended
 
 ## What is this?
 
@@ -13,7 +13,8 @@ The file [tinybasic.oct](tinybasic.oct) is a conversion of the original octal
 listing. This version of Tiny BASIC is written in 8080 machine code. This
 listing was hand-typed from a PDF scan of a bad photocopy, so there are very
 likely errors. However, I was able to load this into an 8080 emulator and enter
-some very simple programs.
+some very simple programs. It is possible that this will work with an Altair
+8800 (or an emulator).
 
 ## Bringing up Tiny BASIC
 
