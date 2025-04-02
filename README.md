@@ -1,5 +1,7 @@
 # Tiny BASIC Extended
 
+## [Try it in your browser!](https://ericscharff.github.io/tinybasic/js/)
+
 ## What is this?
 
 This is a listing of Tiny BASIC Extended, by Dick Whipple and John Arnold. The
@@ -124,8 +126,8 @@ Transcript of session with Tiny BASIC
 
 In the `js/` directory, there is a very primitive simulator of an Intel 8080
 based computer running Tiny BASIC. You can run this in the browser by loading
-index.html.
-node.js:
+index.html. You can also
+[access a live demo](https://ericscharff.github.io/tinybasic/js/).
 
 The Tiny BASIC prompt is the colon `:`. Before you enter a program, you _must_
 type `NEW` at the prompt. If you don't, entering a program line will cause Tiny
