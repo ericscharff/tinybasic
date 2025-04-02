@@ -123,13 +123,9 @@ Transcript of session with Tiny BASIC
 ## JavaScript Simulator
 
 In the `js/` directory, there is a very primitive simulator of an Intel 8080
-based computer running Tiny BASIC. You can run this from the commend line using
+based computer running Tiny BASIC. You can run this in the browser by loading
+index.html.
 node.js:
-
-```
-cd js
-node tinybasic.js
-```
 
 The Tiny BASIC prompt is the colon `:`. Before you enter a program, you _must_
 type `NEW` at the prompt. If you don't, entering a program line will cause Tiny

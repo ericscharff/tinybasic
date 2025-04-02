@@ -1,16 +1,16 @@
-import readline from "readline";
-import { stdin, stdout } from "process";
 import { I8080 } from "./i8080.js";
 import { TINYBASIC_BIOS, TINYBASIC_CODE } from "./code.js";
 
-const rl = readline.createInterface({ input: stdin, output: stdout });
-let halt = false;
-let buf = [];
-rl.on("line", (s) => {
-  buf = buf.concat((s + "\r").split("").map((c) => c.charCodeAt(0)));
-});
-rl.on("close", () => {
-  halt = true;
+var term = new Terminal();
+var buf = [];
+term.open(document.getElementById("terminal"));
+term.onData((e) => {
+  e = e.toUpperCase();
+  term.write(e);
+  if (e == "\n") {
+    e = "\r";
+  }
+  buf.push(e.charCodeAt(0));
 });
 
 class RAM {
@@ -48,12 +48,10 @@ class IO {
   output(port, u8) {
     switch (port) {
       case 0:
-        if (u8 !== 13) {
-          stdout.write(String.fromCharCode(u8));
-        }
+        term.write(String.fromCharCode(u8));
         break;
       case 1:
-        stdout.write("\n");
+        term.write("\r\n");
         break;
     }
   }
@@ -63,8 +61,7 @@ const cpu = new I8080(new RAM(), new IO());
 function loop() {
   for (let i = 0; i < 1000; i++) {
     cpu.instruction();
-    if (halt) return;
   }
-  setTimeout(loop, 10);
+  setTimeout(loop, 100);
 }
 loop();
