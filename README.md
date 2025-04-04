@@ -138,6 +138,7 @@ You'll notice several differences from other BASICs, most importantly
 - Instead of `PRINT` or `?` Tiny BASIC uses `PR`
 - Instead of `NEXT` in a loop, Tiny BASIC uses `NXT`
 - Instead of `LIST` to list a program, Tiny BASIC uses `LST`
+- Instead of `INPUT` to prompt for input, Tiny BASIC uses `IN`
 - Programs should be terminated with `END`
 - Only 16 bit integers are supported
 - Only one letter variable names are supported
