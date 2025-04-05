@@ -58,17 +58,22 @@
           <td><code>INPUT</code></td>
           <td><code>IN</code></td>
         </tr>
+        <tr>
+          <td><code>:</code></td>
+          <td><code>$</code></td>
+        </tr>
       </tbody>
     </table>
     <h1>Example program</h1>
     <pre>
-    10 FOR I = 1 TO 10
-    20 FOR J = 1 TO 10
+    10 PR "TIMES TABLE"$PR
+    20 FOR I = 1 TO 10
+    30 FOR J = 1 TO 10
     30 PR I * J;
-    40 NXT J
-    50 PR
-    60 NXT I
-    70 END
+    50 NXT J
+    60 PR
+    70 NXT I
+    80 END
     </pre>
     <p>
       For more information, check out the

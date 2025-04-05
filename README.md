@@ -141,6 +141,8 @@ You'll notice several differences from other BASICs, most importantly
 - Instead of `INPUT` to prompt for input, Tiny BASIC uses `IN`
 - Input is numeric. Complete by hitting SPACE (most BASIC dialects complete
   input by hitting RETURN/ENTER)
+- Instead of `:` to put multiple statements on a single line, Tiny BASIC uses
+  `$`
 - Programs should be terminated with `END`
 - Only 16 bit integers are supported
 - Only one letter variable names are supported
