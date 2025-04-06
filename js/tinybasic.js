@@ -6,8 +6,12 @@ var buf = [];
 term.open(document.getElementById("terminal"));
 term.onData((e) => {
   e = e.toUpperCase();
+  // Remap delete key (which doesn't work ) to backspace (which does)
+  if (e === "\u007f") {
+    e = "\u0008";
+  }
   term.write(e);
-  if (e == "\n") {
+  if (e === "\n") {
     e = "\r";
   }
   buf.push(e.charCodeAt(0));
