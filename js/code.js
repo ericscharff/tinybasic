@@ -5,8 +5,8 @@ export const TINYBASIC_BIOS = [
   0x000, 0x000, 0x000, 0x000, 0x000, 0x000, 0x000, 0x000,
   // 000020: Output CRLF: OUT 1 ; RET
   0o323, 0o001, 0o311, 0o311, 0o311, 0o311, 0o311, 0o311,
-  // 000030: Input: IN 0 ; ORI 0 ; JZ 24 ; RET
-  0o333, 0o000, 0o366, 0o000, 0o312, 0o030, 0o000, 0o311,
+  // 000030: Input: IN 1 ; ORI 0 ; JZ 24 ; RET
+  0o333, 0o001, 0o366, 0o000, 0o312, 0o030, 0o000, 0o311,
   // 000040: Unused
   0x000, 0x000, 0x000, 0x000, 0x000, 0x000, 0x000, 0x000,
   // 000050: Output: OUT 0 ; RET

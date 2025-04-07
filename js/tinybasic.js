@@ -44,7 +44,7 @@ class RAM {
 class IO {
   input(port) {
     switch (port) {
-      case 0:
+      case 1:
         return buf.shift() || 0;
     }
   }
