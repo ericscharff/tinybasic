@@ -44,6 +44,8 @@ class RAM {
 class IO {
   input(port) {
     switch (port) {
+      case 0:
+        return buf.length > 0 ? 0x22 : 0x02;
       case 1:
         return buf.shift() || 0;
     }
@@ -52,10 +54,10 @@ class IO {
   output(port, u8) {
     switch (port) {
       case 0:
-        term.write(String.fromCharCode(u8));
+        term.write("\r\n");
         break;
       case 1:
-        term.write("\r\n");
+        term.write(String.fromCharCode(u8));
         break;
     }
   }
