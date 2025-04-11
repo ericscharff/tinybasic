@@ -63,6 +63,8 @@ class IO {
         break;
     }
   }
+
+  interrupt(enabled) {}
 }
 
 const cpu = new I8080(new RAM(), new IO());
