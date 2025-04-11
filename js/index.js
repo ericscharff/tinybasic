@@ -12,7 +12,6 @@ term.onData((e) => {
   if (e === "\u007f") {
     e = "\u0008";
   }
-  term.write(e);
   if (e === "\n") {
     e = "\r";
   }
@@ -22,6 +21,7 @@ term.onData((e) => {
 class RAM {
   constructor() {
     this.mem = new Array(65536);
+
     // TinyBasic goes at 0x1000
     let loc = 0x1000;
     for (const b of TINYBASIC_CODE) {
