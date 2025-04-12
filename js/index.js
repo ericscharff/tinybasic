@@ -21,6 +21,11 @@ term.onData((e) => {
 class RAM {
   constructor() {
     this.mem = new Array(65536);
+    // Hack to make Palo Alto Tiny BASIC work without some surgery. This
+    // enables terminal output when TB starts up. Without it, you must
+    // press Control-O to start output. Other versions don't need this.
+    // TBX overwrites it entirely.
+    this.mem[0x1000] = 0xff;
 
     // TinyBasic goes at 0x1000
     let loc = 0x1000;
