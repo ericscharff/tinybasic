@@ -9,7 +9,8 @@ listing (as presented here) originally appeared in
 [SIGPLAN Notices, July 1976](https://doi.org/10.1145/987491.987494). The SIGPLAN
 article is a reprint of an article that appeared in the January 1976 issue of
 Dr. Dobb's Journal of Tiny BASIC Calisthenics & Orthodontia (the very first
-issue of Dr. Dobbs Journal.)
+issue of Dr. Dobbs Journal.) A type-in of the binary was in the first issue, the
+source code appeared in the second issue.
 
 The file [tinybasic.oct](tinybasic.oct) is a recreation of the original split
 octal listing, and closely resembles how it appeared in the first issue of DDJ.
