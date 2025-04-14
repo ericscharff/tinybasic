@@ -10,7 +10,7 @@ export const TINYBASIC_BIOS = [
   0o323, 0o000, 0o311, 0o311, 0o311, 0o311, 0o311, 0o311,
   // 000030: Input: IN 1 ; ORI 0 ; JZ 24 ; OUT 1 ; RET
   0o333, 0o001, 0o366, 0o000, 0o312, 0o030, 0o000, 0o323,
-  // 000040: Unused (continuation of OUT [1 ; RET])
+  // 000040: continuation of above (the 1 and RET)
   0o001, 0o311, 0o000, 0o000, 0o000, 0o000, 0o000, 0o000,
   // 000050: Output: OUT 1 ; RET
   0o323, 0o001, 0o311, 0o311, 0o311, 0o311, 0o311, 0o311,
