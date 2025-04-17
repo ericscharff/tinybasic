@@ -1,7 +1,12 @@
 // 8080 emulator running Tiny BASIC
 // I/O comes from the browser running an xterm.us terminal
 import { I8080 } from "./i8080.js";
-import { TINYBASIC_BIOS, TINYBASIC_CODE } from "./tinybasic.js";
+import {
+  PALO_ALTO_V1,
+  PALO_ALTO_V2,
+  TINYBASIC_BIOS,
+  TINYBASIC_CODE,
+} from "./tinybasic.js";
 
 var term = new Terminal();
 var buf = [];
@@ -21,21 +26,37 @@ term.onData((e) => {
 class RAM {
   constructor() {
     this.mem = new Array(65536);
+    this.initialize("tbx");
+  }
+
+  initialize(basicVariant) {
     // Hack to make Palo Alto Tiny BASIC work without some surgery. This
     // enables terminal output when TB starts up. Without it, you must
     // press Control-O to start output. Other versions don't need this.
     // TBX overwrites it entirely.
     this.mem[0x1000] = 0xff;
 
-    // TinyBasic goes at 0x1000
-    let loc = 0x1000;
-    for (const b of TINYBASIC_CODE) {
-      this.mem[loc++] = b;
-    }
-    // BIOS goes at 0x0000
-    loc = 0x0;
-    for (const b of TINYBASIC_BIOS) {
-      this.mem[loc++] = b;
+    if (basicVariant === "tbx") {
+      // TinyBasic goes at 0x1000
+      let loc = 0x1000;
+      for (const b of TINYBASIC_CODE) {
+        this.mem[loc++] = b;
+      }
+      // BIOS goes at 0x0000
+      loc = 0x0;
+      for (const b of TINYBASIC_BIOS) {
+        this.mem[loc++] = b;
+      }
+    } else if (basicVariant === "patb_v1") {
+      let loc = 0x0;
+      for (const b of PALO_ALTO_V1) {
+        this.mem[loc++] = b;
+      }
+    } else if (basicVariant === "patb_v2") {
+      let loc = 0x0;
+      for (const b of PALO_ALTO_V2) {
+        this.mem[loc++] = b;
+      }
     }
   }
 
@@ -72,7 +93,14 @@ class IO {
   interrupt(enabled) {}
 }
 
-const cpu = new I8080(new RAM(), new IO());
+const ram = new RAM();
+const cpu = new I8080(ram, new IO());
+
+document.getElementById("variant").addEventListener("change", (e) => {
+  ram.initialize(e.target.value);
+  cpu.jump(0);
+});
+
 function loop() {
   for (let i = 0; i < 1000; i++) {
     cpu.instruction();
