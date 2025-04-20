@@ -26,5 +26,5 @@ Both versions come in several variants:
   [npm asm80](https://www.npmjs.com/package/asm80) assembler.
 - `*.lst` - Listing, as produced by the `asm80` assembler
 - `*.hex` - Intel hex files, as produced by the `asm80` assembler
-- `*.txt` - Text versions of the binary. These are mostly for convenience so
-  that they can be imported into JavaScript.
+- `*.txt` - Text versions of the binary to octal. These are mostly for
+  convenience so that they can be imported into JavaScript.
