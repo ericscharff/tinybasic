@@ -6,10 +6,12 @@ import {
   PALO_ALTO_V2,
   TINYBASIC_BIOS,
   TINYBASIC_CODE,
+  WHIPPLE,
 } from "./tinybasic.js";
 
 var term = new Terminal();
 var buf = [];
+var addNewline = false;
 term.open(document.getElementById("terminal"));
 term.onData((e) => {
   e = e.toUpperCase();
@@ -30,6 +32,7 @@ class RAM {
   }
 
   initialize(basicVariant) {
+    addNewline = false;
     // Hack to make Palo Alto Tiny BASIC work without some surgery. This
     // enables terminal output when TB starts up. Without it, you must
     // press Control-O to start output. Other versions don't need this.
@@ -55,6 +58,12 @@ class RAM {
     } else if (basicVariant === "patb_v2") {
       let loc = 0x0;
       for (const b of PALO_ALTO_V2) {
+        this.mem[loc++] = b;
+      }
+    } else if (basicVariant === "whipple") {
+      addNewline = true;
+      let loc = 0x0;
+      for (const b of WHIPPLE) {
         this.mem[loc++] = b;
       }
     }
@@ -86,6 +95,10 @@ class IO {
         break;
       case 1:
         term.write(String.fromCharCode(u8));
+        if ((u8 == 13) && addNewline) {
+          // This works around a bug that Whipple BASIC does not send NL
+          term.write("\n");
+        }
         break;
     }
   }
