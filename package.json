@@ -1,0 +1,30 @@
+{
+  "name": "tinybasic",
+  "version": "1.0.0",
+  "description": "Tiny BASIC for Intel 8080",
+  "keywords": [
+    "basic"
+  ],
+  "homepage": "https://github.com/ericscharff/tinybasic#readme",
+  "bugs": {
+    "url": "https://github.com/ericscharff/tinybasic/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericscharff/tinybasic.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@xterm/xterm": "^5.5.0",
+    "asm80": "^0.9.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
+}
