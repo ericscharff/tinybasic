@@ -1,5 +1,5 @@
 // 8080 emulator running Tiny BASIC
-// I/O comes from the browser running an xterm.us terminal
+// I/O comes from the browser running an xterm.js terminal
 import { I8080 } from "./i8080.js";
 import {
   PALO_ALTO_V1,
