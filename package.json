@@ -20,11 +20,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "prettier": "^3.8.3"
-  },
   "dependencies": {
     "@xterm/xterm": "^6.0.0",
     "asm80": "^0.9.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-language-server": "^5.2.0"
   }
 }
